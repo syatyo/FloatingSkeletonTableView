@@ -6,6 +6,7 @@ target 'FloatingSkeletonTableView' do
   use_frameworks!
   pod "SkeletonView"
   pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+  pod 'Kingfisher', '~> 5.0'
   # Pods for FloatingSkeletonTableView
 
   target 'FloatingSkeletonTableViewTests' do
