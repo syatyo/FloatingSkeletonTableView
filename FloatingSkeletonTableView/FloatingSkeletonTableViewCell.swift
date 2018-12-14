@@ -69,7 +69,7 @@ class FloatingSkeletonTableViewCell: UITableViewCell {
 extension FloatingSkeletonTableViewCell {
     
     private func shrink() {
-        let animationScale: CGFloat = 0.95
+        let animationScale: CGFloat = 0.90
         UIView.animate(withDuration: 0.1) { [unowned self] in
             self.transform = .init(scaleX: animationScale,
                                    y: animationScale)
@@ -77,7 +77,7 @@ extension FloatingSkeletonTableViewCell {
     }
     
     private func expand() {
-        let animationScale: CGFloat = 1.05
+        let animationScale: CGFloat = 1.10
         UIView.animate(withDuration: 0.1) { [unowned self] in
             self.transform = .init(scaleX: animationScale,
                                    y: animationScale)
