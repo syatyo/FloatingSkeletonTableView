@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		12B47B0E867FA8721CBD919D /* Pods_FloatingSkeletonTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F034C19E3EC3DADDA1185E /* Pods_FloatingSkeletonTableView.framework */; };
 		18160B4A21C403680009CCAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18160B4921C403680009CCAC /* AppDelegate.swift */; };
-		18160B4C21C403680009CCAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18160B4B21C403680009CCAC /* ViewController.swift */; };
+		18160B4C21C403680009CCAC /* FloatingSkeletonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18160B4B21C403680009CCAC /* FloatingSkeletonTableViewController.swift */; };
 		18160B4F21C403680009CCAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18160B4D21C403680009CCAC /* Main.storyboard */; };
 		18160B5121C403690009CCAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18160B5021C403690009CCAC /* Assets.xcassets */; };
 		18160B5421C403690009CCAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18160B5221C403690009CCAC /* LaunchScreen.storyboard */; };
 		18160B5F21C403690009CCAC /* FloatingSkeletonTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18160B5E21C403690009CCAC /* FloatingSkeletonTableViewTests.swift */; };
+		18160B6B21C408AE0009CCAC /* FloatingSkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18160B6921C408AE0009CCAC /* FloatingSkeletonTableViewCell.swift */; };
+		18160B6C21C408AE0009CCAC /* FloatingSkeletonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18160B6A21C408AE0009CCAC /* FloatingSkeletonTableViewCell.xib */; };
 		CC52568DA6A9EF762BD1E72C /* Pods_FloatingSkeletonTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2A2F7A94A8155BCFBB5CC7 /* Pods_FloatingSkeletonTableViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +32,7 @@
 /* Begin PBXFileReference section */
 		18160B4621C403680009CCAC /* FloatingSkeletonTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingSkeletonTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18160B4921C403680009CCAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18160B4B21C403680009CCAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18160B4B21C403680009CCAC /* FloatingSkeletonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSkeletonTableViewController.swift; sourceTree = "<group>"; };
 		18160B4E21C403680009CCAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18160B5021C403690009CCAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18160B5321C403690009CCAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		18160B5A21C403690009CCAC /* FloatingSkeletonTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatingSkeletonTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18160B5E21C403690009CCAC /* FloatingSkeletonTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSkeletonTableViewTests.swift; sourceTree = "<group>"; };
 		18160B6021C403690009CCAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18160B6921C408AE0009CCAC /* FloatingSkeletonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSkeletonTableViewCell.swift; sourceTree = "<group>"; };
+		18160B6A21C408AE0009CCAC /* FloatingSkeletonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingSkeletonTableViewCell.xib; sourceTree = "<group>"; };
 		6E35FC87A694C46BB0699B56 /* Pods-FloatingSkeletonTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingSkeletonTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatingSkeletonTableView/Pods-FloatingSkeletonTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		7DE784FA3D273DA6A8C72A38 /* Pods-FloatingSkeletonTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingSkeletonTableViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatingSkeletonTableViewTests/Pods-FloatingSkeletonTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		85F034C19E3EC3DADDA1185E /* Pods_FloatingSkeletonTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatingSkeletonTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				18160B4921C403680009CCAC /* AppDelegate.swift */,
-				18160B4B21C403680009CCAC /* ViewController.swift */,
+				18160B4B21C403680009CCAC /* FloatingSkeletonTableViewController.swift */,
+				18160B6921C408AE0009CCAC /* FloatingSkeletonTableViewCell.swift */,
+				18160B6A21C408AE0009CCAC /* FloatingSkeletonTableViewCell.xib */,
 				18160B4D21C403680009CCAC /* Main.storyboard */,
 				18160B5021C403690009CCAC /* Assets.xcassets */,
 				18160B5221C403690009CCAC /* LaunchScreen.storyboard */,
@@ -214,6 +220,7 @@
 			files = (
 				18160B5421C403690009CCAC /* LaunchScreen.storyboard in Resources */,
 				18160B5121C403690009CCAC /* Assets.xcassets in Resources */,
+				18160B6C21C408AE0009CCAC /* FloatingSkeletonTableViewCell.xib in Resources */,
 				18160B4F21C403680009CCAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18160B4C21C403680009CCAC /* ViewController.swift in Sources */,
+				18160B6B21C408AE0009CCAC /* FloatingSkeletonTableViewCell.swift in Sources */,
+				18160B4C21C403680009CCAC /* FloatingSkeletonTableViewController.swift in Sources */,
 				18160B4A21C403680009CCAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
