@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol FloatingSkeletonTableViewCellDelegate: AnyObject {
+    func cellWillStartAnimating()
+    func cellWillEndAnimating()
+}
+
 class FloatingSkeletonTableViewCell: UITableViewCell {
     @IBOutlet weak var floatingView: UIView!
     @IBOutlet weak var leftImageVIew: UIImageView!
     @IBOutlet weak var rightLabel: UILabel!
     
+    weak var delegate: FloatingSkeletonTableViewCellDelegate?
     private let longPress = UILongPressGestureRecognizer()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,8 +46,10 @@ class FloatingSkeletonTableViewCell: UITableViewCell {
     private func animateView() {
         switch longPress.state {
         case .began:
+            delegate?.cellWillStartAnimating()
             shrink()
         case .ended:
+            delegate?.cellWillEndAnimating()
             restore()
         default:
             print("Do nothing.")

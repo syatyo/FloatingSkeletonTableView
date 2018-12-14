@@ -11,8 +11,9 @@ import SkeletonView
 
 class FloatingSkeletonTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let cellIdentifer = "FloatingSkeletonTableViewCell"
-    let numberOfRows = 30
+    private let cellIdentifer = "FloatingSkeletonTableViewCell"
+    private let numberOfRows = 30
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ extension FloatingSkeletonTableViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as! FloatingSkeletonTableViewCell
+        cell.delegate = self
         return cell
     }
     
@@ -61,6 +63,18 @@ extension FloatingSkeletonTableViewController: SkeletonTableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+}
+
+extension FloatingSkeletonTableViewController: FloatingSkeletonTableViewCellDelegate {
+    
+    func cellWillStartAnimating() {
+        feedbackGenerator.prepare()
+    }
+    
+    func cellWillEndAnimating() {
+        feedbackGenerator.impactOccurred()
     }
     
 }
