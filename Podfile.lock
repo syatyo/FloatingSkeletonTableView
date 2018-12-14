@@ -1,16 +1,28 @@
 PODS:
   - SkeletonView (1.4.1)
+  - SwiftyXMLParser (4.3.0)
 
 DEPENDENCIES:
   - SkeletonView
+  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SkeletonView
 
+EXTERNAL SOURCES:
+  SwiftyXMLParser:
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+CHECKOUT OPTIONS:
+  SwiftyXMLParser:
+    :commit: 9c97f83e5f5b1fc0129f77be090052ae46775bd2
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
 SPEC CHECKSUMS:
   SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
+  SwiftyXMLParser: b2e0b0dd0e0fb1ac39869dd4a0c6181847af2945
 
-PODFILE CHECKSUM: 760aba994c6199646ab31e72dfb8049f502a24fd
+PODFILE CHECKSUM: 4ae4b5bb91e25b2f02388a385023a2ebb26d3cf3
 
 COCOAPODS: 1.5.3
