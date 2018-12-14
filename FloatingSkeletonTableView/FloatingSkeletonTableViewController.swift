@@ -31,11 +31,12 @@ class FloatingSkeletonTableViewController: UIViewController {
         client.fetchTopMovies { [weak self] movies in
             self?.movies = movies
             
-            
-            DispatchQueue.main.async {
+            // スケルトンを見せたいためだけのタイマー
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self?.tableView.reloadData()
                 self?.tableView.hideSkeleton()
             }
+
         }
     }
 
