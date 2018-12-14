@@ -8,12 +8,14 @@
 
 import UIKit
 import SkeletonView
+import Kingfisher
 
 class FloatingSkeletonTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let cellIdentifer = "FloatingSkeletonTableViewCell"
-    private let numberOfRows = 30
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+    private var movies: [Movie] = []
+    private let client = ITunesClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,15 @@ class FloatingSkeletonTableViewController: UIViewController {
         tableView.backgroundView = nil
         tableView.separatorStyle = .none
         
-        // Do any additional setup after loading the view, typically from a nib.
+        client.fetchTopMovies { [weak self] movies in
+            self?.movies = movies
+            
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.tableView.hideSkeleton()
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,7 +50,7 @@ class FloatingSkeletonTableViewController: UIViewController {
 extension FloatingSkeletonTableViewController: SkeletonTableViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRows
+        return 20
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
@@ -48,13 +58,21 @@ extension FloatingSkeletonTableViewController: SkeletonTableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRows
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as! FloatingSkeletonTableViewCell
-        cell.delegate = self
+        let movie = movies[indexPath.row]
+        configureCell(cell, fromMovie: movie)
         return cell
+    }
+    
+    private func configureCell(_ cell: FloatingSkeletonTableViewCell, fromMovie movie: Movie) {
+        cell.delegate = self
+        cell.leftImageVIew?.kf.setImage(with: movie.thumbnailURL)
+        cell.rightLabel.text = movie.description
     }
     
 }
@@ -62,7 +80,7 @@ extension FloatingSkeletonTableViewController: SkeletonTableViewDataSource {
 extension FloatingSkeletonTableViewController: SkeletonTableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 200
     }
     
 }
