@@ -33,6 +33,11 @@ class FloatingSkeletonTableViewCell: UITableViewCell {
     
     private func initialize() {
         floatingView.layer.cornerRadius = 5
+        floatingView.layer.shadowColor = UIColor.gray.cgColor
+        floatingView.layer.shadowOpacity = 0.8
+        floatingView.layer.shadowRadius = 5
+        floatingView.layer.shadowOffset = .zero
+        
         longPress.addTarget(self, action: #selector(handleLongPress(recognizer:)))
         longPress.minimumPressDuration = 0.01
         longPress.delegate = self
