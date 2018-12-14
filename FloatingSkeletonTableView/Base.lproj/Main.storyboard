@@ -30,7 +30,7 @@
                         <color key="backgroundColor" red="0.41462788445365761" green="0.57743353620053584" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TsA-GW-bHB" secondAttribute="trailing" constant="16" id="CL4-c9-yU9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TsA-GW-bHB" secondAttribute="bottom" id="FjV-wz-5qk"/>
+                            <constraint firstAttribute="bottom" secondItem="TsA-GW-bHB" secondAttribute="bottom" id="FjV-wz-5qk"/>
                             <constraint firstItem="TsA-GW-bHB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fhf-hv-kKe"/>
                             <constraint firstItem="TsA-GW-bHB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="y5c-pH-fAT"/>
                         </constraints>
